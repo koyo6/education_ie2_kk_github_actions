@@ -6,5 +6,7 @@ jobs:
   hello-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print hello
-        run: echo "Hello, GitHub Actions"
+      - name: step1
+        run: echo "step1"
+      - name: step2
+        run: echo "step2"
