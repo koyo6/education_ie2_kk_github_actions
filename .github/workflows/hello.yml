@@ -1,12 +1,20 @@
-name: Hello workflow
+name: Multi-job workflow
 
-on: push
+on:
+  push:
+    branches:
+      - main
+      - feature/pr-trigger-check  # 必要に応じてブランチ名追加
 
 jobs:
-  hello-job:
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - name: step1
-        run: echo "step1"
-      - name: step2
-        run: echo "step2"
+      - name: Job1 step
+        run: echo "job1"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job2 step
+        run: echo "job2"

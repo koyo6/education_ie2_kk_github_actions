@@ -1,10 +1,10 @@
-name: CI Practice
+name: Hello workflow
 
-on: [push]
+on: push
 
 jobs:
-  build:
+  hello-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: echo "Hello CI/CD World!"
+      - name: Print hello
+        run: echo "Hello, GitHub Actions"
