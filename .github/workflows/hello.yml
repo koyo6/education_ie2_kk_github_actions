@@ -1,20 +1,19 @@
-name: Multi-job workflow
+name: Needs-practice workflow
 
 on:
   push:
     branches:
       - main
-      - feature/pr-trigger-check  # 必要に応じてブランチ名追加
 
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Job1 step
-        run: echo "job1"
-
+      - name: First job step
+        run: echo "first job"
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
-      - name: Job2 step
-        run: echo "job2"
+      - name: Second job step
+        run: echo "second job"
